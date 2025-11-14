@@ -1,0 +1,162 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #f6f7fb;
+  color: #1f2933;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fbff 0%, #f7f3ff 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.chat-panel {
+  width: min(680px, 100%);
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 32px 80px rgba(82, 97, 120, 0.15);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.chat-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.chat-header p {
+  margin: 4px 0 0;
+  color: #52616b;
+  font-size: 0.95rem;
+}
+
+.chat-feed {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 8px;
+}
+
+.message {
+  max-width: 78%;
+  padding: 14px 18px;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.message.assistant {
+  background: #f0f4ff;
+  border-top-left-radius: 4px;
+  align-self: flex-start;
+}
+
+.message.user {
+  background: #5c6ac4;
+  color: #ffffff;
+  border-top-right-radius: 4px;
+  align-self: flex-end;
+}
+
+.message small {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.input-bar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid rgba(93, 111, 150, 0.2);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.input-bar textarea {
+  flex: 1;
+  border: none;
+  resize: none;
+  min-height: 48px;
+  max-height: 120px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  outline: none;
+  background: transparent;
+}
+
+.input-bar button {
+  border: none;
+  background: #5c6ac4;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.input-bar button:disabled {
+  background: #a6b1e1;
+  cursor: not-allowed;
+}
+
+.input-bar button:not(:disabled):hover {
+  background: #4f5ab7;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 12px;
+  }
+
+  .chat-panel {
+    border-radius: 18px;
+    padding: 20px;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+}
